@@ -8,9 +8,9 @@
 
 ## Kernel compilation
 
-We need to add some system calls define in this project.
+We need to add some system calls defined in this project.
 
-The necessay files are placed in the ``kernel_files`` directory. Use these files to replace the corresponding original kernel files.
+The necessary files are placed in the ``kernel_files`` directory. Use these files to replace the corresponding original kernel files.
 
 For adding system calls and kernel compilation, please follow the instructions in the following websites:
 
@@ -26,4 +26,4 @@ The ``make`` command should generate an executable file ``scheduler``.
 
 The inputs files are placed in the ``OS_PJ1_Test`` directory, and the outputs are placed in the ``output`` directory.
 
-Running the ``test.sh`` script will run against all input files and generate the corresponding outputs in the ``output`` directory.
+Running the ``test.sh`` script will run the scheduler against all input files and generate the corresponding outputs in the ``output`` directory.
