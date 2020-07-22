@@ -1,0 +1,35 @@
+# sample 1 - fcntl
+cat ../tests/sample_1_master_fcntl.txt
+sudo ./master < ../tests/sample_1_master_fcntl.txt
+sudo ./slave < ../tests/sample_1_slave_fcntl.txt
+for i in {1..10}; do diff "../input/sample_input_1/target_file_${i}" "../output/sample_data_1/target_file_${i}"; done
+
+# sample 1 - mmap
+cat ../tests/sample_1_master_mmap.txt
+sudo ./master < ../tests/sample_1_master_mmap.txt
+sudo ./slave < ../tests/sample_1_slave_mmap.txt
+for i in {1..10}; do diff "../input/sample_input_1/target_file_${i}" "../output/sample_data_1/target_file_${i}"; done
+
+# sample 2 - fcntl
+cat ../tests/sample_2_master_fcntl.txt
+sudo ./master < ../tests/sample_2_master_fcntl.txt
+sudo ./slave < ../tests/sample_2_slave_fcntl.txt
+diff ../input/sample_input_2/target_file ../output/sample_data_2/target_file
+
+# sample 2 - mmap
+cat ../tests/sample_2_master_mmap.txt
+sudo ./master < ../tests/sample_2_master_mmap.txt
+sudo ./slave < ../tests/sample_2_slave_mmap.txt
+diff ../input/sample_input_2/target_file ../output/sample_data_2/target_file
+
+# self-designed (100 MB x 5) - fcntl
+cat ../tests/self_design_1_master_fcntl.txt
+sudo ./master < ../tests/self_design_1_master_fcntl.txt
+sudo ./slave < ../tests/self_design_1_slave_fcntl.txt
+for i in {1..5}; do sudo diff "../input/self_design_1/f${i}" "../output/self_design_1/f${i}"; done
+
+# self-designed (100 MB x 5) - mmap
+cat ../tests/self_design_1_master_mmap.txt
+sudo ./master < ../tests/self_design_1_master_mmap.txt
+sudo ./slave < ../tests/self_design_1_slave_mmap.txt
+for i in {1..5}; do sudo diff "../input/self_design_1/f${i}" "../output/self_design_1/f${i}"; done
